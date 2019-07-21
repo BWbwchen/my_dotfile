@@ -41,16 +41,16 @@ function fish_prompt --description 'Write out the prompt'
     end
 
     if not set -q __fish_git_prompt_color_dirtystate
-        set -g __fish_git_prompt_color_dirtystate blue
+        set -g __fish_git_prompt_color_dirtystate 00c5ff --bold
     end
     if not set -q __fish_git_prompt_color_stagedstate
-        set -g __fish_git_prompt_color_stagedstate yellow
+        set -g __fish_git_prompt_color_stagedstate yellow --bold
     end
     if not set -q __fish_git_prompt_color_invalidstate
-        set -g __fish_git_prompt_color_invalidstate red
+        set -g __fish_git_prompt_color_invalidstate red --bold
     end
     if not set -q __fish_git_prompt_color_untrackedfiles
-        set -g __fish_git_prompt_color_untrackedfiles $fish_color_normal
+        set -g __fish_git_prompt_color_untrackedfiles $fish_color_normal --bold
     end
     if not set -q __fish_git_prompt_color_cleanstate
         set -g __fish_git_prompt_color_cleanstate green --bold
