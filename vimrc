@@ -3,21 +3,11 @@ let g:powerline_pycmd="py3"
 let NERDTreeShowHidden=1 
 let NERDTreeWinSize=20
 let NERDTreeDirArrows = 1
-let g:multi_cursor_use_default_mapping=0
-let g:multi_cursor_next_key='<C-d>' 
-let g:multi_cursor_prev_key='<C-p>' 
-let g:multi_cursor_skip_key='<C-x>' 
-let g:multi_cursor_quit_key='<Esc>'
-let g:tagbar_width=30  
-let g:tagbar_right=1  
 
 
-set completeopt-=preview 
 
 " basic setting
-set completeopt=longest,menu
-set number relativenumber
-set nu rnu
+set nu
 set ai 
 set tabstop=4
 set shiftwidth=4
@@ -32,21 +22,22 @@ set laststatus=2
 set noshowmatch
 set clipboard=unnamed
 set switchbuf+=newtab
-set tags=tags;/
-
+set cursorline
+set colorcolumn=80
+set foldmethod=indent
 filetype indent on
 
 " parentheses
-inoremap ( ()<Esc>i
-inoremap " ""<Esc>i
-inoremap ' ''<Esc>i
-inoremap [ []<Esc>i
-inoremap {<CR> {<CR>}<Esc>ko
+"inoremap ( ()<Esc>i
+"inoremap " ""<Esc>i
+"inoremap ' ''<Esc>i
+"inoremap [ []<Esc>i
+"inoremap {<CR> {<CR>}<Esc>ko
 
 " short cut for programing 
 nnoremap <F12> <Esc>:w<CR>
-nnoremap <F9> <Esc>:!g++ -c -g %<CR>
-nnoremap <F10> <Esc>:!make<CR>
+nnoremap <F9> <Esc>:!g++ -g %<CR>
+nnoremap <F10> <Esc>:!./a.out<CR>
 nnoremap <c-l> :nohl<CR>
 nnoremap <leader>w :wq<CR>
 nnoremap <leader>q :q<CR>
@@ -77,7 +68,6 @@ map <F4> :execute "vimgrep /" .expand("<cword>") . "/j **" <Bar> cw<CR>
 
 " short cut for plugin
 nnoremap <leader>t :NERDTreeToggle<CR>
-nnoremap <F8> :TagbarToggle<CR>
 nnoremap <leader><F1> <C-]>
 nnoremap <leader><F2> <C-t>
 
@@ -85,8 +75,6 @@ nnoremap <leader><F2> <C-t>
 " for plugin 
 call plug#begin()
 Plug 'scrooloose/nerdtree'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'Yggdroot/indentLine'
-Plug 'majutsushi/tagbar'
 call plug#end()
 
